@@ -655,7 +655,7 @@ img {
   transition: transform var(--transition-duration) var(--transition-timing-function),
     opacity var(--transition-duration) var(--transition-timing-function);
 
-  min-width: 528px;
+  width: 528px;
   height: 581px;
   padding: 40px;
 
@@ -706,8 +706,6 @@ img {
   width: 448px;
 }
 .form-field {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
 }
 .field-name {
@@ -728,6 +726,7 @@ img {
 }
 .form-field:focus-within .form-input,
 .form-field:hover .form-input {
+  outline: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 .input-items {
@@ -770,6 +769,7 @@ img {
 }
 .form-comment:focus-within > .modal-comment,
 .form-comment:hover > .modal-comment {
+  outline: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 .checkbox {
