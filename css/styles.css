@@ -656,7 +656,7 @@ img {
     opacity var(--transition-duration) var(--transition-timing-function);
 
   min-width: 528px;
-  min-height: 581px;
+  height: 581px;
   padding: 40px;
 
   background: var(--primary-white-color);
@@ -715,21 +715,43 @@ img {
   margin-bottom: 4px;
 
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.01em;
 }
 .form-input {
-  padding: 11px 12px;
+  width: 100%;
+  padding: 11px 12px 11px 42px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: border var(--transition-duration) var(--transition-timing-function);
   border-radius: 4px;
+}
+.form-field:focus-within .form-input,
+.form-field:hover .form-input {
+  border: 1px solid var(--accent-color);
+}
+.input-items {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: var(--title-text-color);
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+.form-field:focus-within .input-icon,
+.form-field:hover .input-icon {
+  fill: var(--accent-color);
 }
 .form-comment {
   margin-bottom: 20px;
 }
 .form-comment textarea::placeholder {
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
@@ -743,8 +765,41 @@ img {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border var(--transition-duration) var(--transition-timing-function);
+}
+.form-comment:focus-within > .modal-comment,
+.form-comment:hover > .modal-comment {
+  border: 1px solid var(--accent-color);
+}
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.checkbox-icon {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+}
+.checkbox:checked + .checkbox-icon {
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
 }
 .form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
 }
 .policy-link {
