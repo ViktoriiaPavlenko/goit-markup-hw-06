@@ -780,8 +780,7 @@ img {
   transition: border var(--transition-duration) var(--transition-timing-function);
   border-radius: 4px;
 }
-.form-field:focus-within .form-input,
-.form-field:hover .form-input {
+.form-field:focus-within .form-input {
   outline: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -797,8 +796,7 @@ img {
   fill: var(--title-text-color);
   transition: fill var(--transition-duration) var(--transition-timing-function);
 }
-.form-field:focus-within .input-icon,
-.form-field:hover .input-icon {
+.form-field:focus-within .input-icon {
   fill: var(--accent-color);
 }
 .form-comment {
@@ -823,8 +821,7 @@ img {
 
   transition: border var(--transition-duration) var(--transition-timing-function);
 }
-.form-comment:focus-within > .modal-comment,
-.form-comment:hover > .modal-comment {
+.form-comment:focus-within > .modal-comment {
   outline: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -851,6 +848,9 @@ img {
   background-origin: border-box;
   border-color: var(--accent-color);
   background-color: var(--accent-color);
+}
+.checkbox:focus + .checkbox-icon {
+  border-color: var(--accent-color);
 }
 .form-checkbox {
   display: flex;
